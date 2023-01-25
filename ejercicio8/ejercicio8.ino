@@ -4,6 +4,7 @@ const int analogOutPin = 9; // Pin de salida analógica al que está conectado e
 int sensorValue = 0; // Variable sonsor
 int outputValue = 0; // salida analógica
 void setup() {
+ 
  // comunicacion entre el arduino y la pc:
  Serial.begin(9600); 
 }
@@ -11,9 +12,9 @@ void setup() {
 void loop() {
  // rLeer el valor analogico:
  sensorValue = analogRead(analogInPin); 
- // asignarlo al rango de la salida analógica:
+  // asignarlo al rango de la salida analógica:
  outputValue = map(sensorValue, 0, 1023, 0, 255); 
-//cambio valor de boton analogico
+ //cambio valor de boton analogico
  analogWrite(analogOutPin, outputValue);
 
 // imprimir resultado por el munitor
